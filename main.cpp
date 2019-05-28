@@ -25,17 +25,22 @@ public:
     }
 };
 
-void print(const int *arr, const int leng) {
+void print(int *arr, int leng) {
     for(int i(0); i < leng; i++) {
         cout << arr[i] << " ";
     }
     cout << endl;
 }
 
+void doSort(Sort *sort, int *arr, int leng) {
+    sort->sorting(arr, leng);
+    print(arr, leng);
+}
+
 int main() {
-    int array[] = {110,55,0,55,18,60,19,0,2,0};
-    SelectionSort a;
-    a.sorting(array, 10);
-    print(array, 10);
+    int array[] = {8, 1, 2, 5, 7, 9, 3, 6, 4, 0};
+    SelectionSort sort;
+    doSort(&sort, array, 10);
+
     return 0;
 }
